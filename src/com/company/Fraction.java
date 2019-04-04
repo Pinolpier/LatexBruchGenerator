@@ -43,9 +43,9 @@ public class Fraction {
 
     public String toString() {
         if (mixedNumber == 0) {
-            return "$\\dfrac{" + numerator + "}{" + denominator + "}$.\\";
+            return "$\\dfrac{" + numerator + "}{" + denominator + "}$.";
         } else {
-            return "{\\Huge " + mixedNumber + "}$\\dfrac{" + numerator + "}{" + denominator + "}$.\\\\";
+            return "{\\Large " + mixedNumber + "}$\\dfrac{" + numerator + "}{" + denominator + "}$.";
         }
     }
 
@@ -108,6 +108,9 @@ public class Fraction {
 
     public void kuerzen () {
         int numer =  mixedNumber*denominator + numerator, denom = denominator;
+        if ((numer == 0) || (denom == 0)) {
+            return;
+        }
         boolean numNeg = false, denNeg = false;
         if (numer < 0) {
             numNeg = true;
